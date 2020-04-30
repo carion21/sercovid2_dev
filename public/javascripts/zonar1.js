@@ -2,6 +2,9 @@ demo = {
     initGoogleMaps: function () {
         //RECUPERATION
 
+        var latitude_user = parseFloat(document.getElementById("latitude_user").textContent)
+        var longitude_user = parseFloat(document.getElementById("longitude_user").textContent)
+
         var havecenter = parseInt(document.getElementById("havecenter").textContent)
         var ztotal = parseInt(document.getElementById("ztotal").textContent)
         var zcenter = {}
@@ -53,7 +56,7 @@ demo = {
 
         //var myZone = new google.maps.LatLng(latitude, longitude);
         var mapOptions = {
-            zoom: 16,
+            zoom: 10,
             mapTypeId: 'satellite',
             center: zc,
             scrollwheel: true, //we disable de scroll over the map, it is a really annoing when you scroll through page
@@ -209,6 +212,15 @@ demo = {
             marker.setMap(map);
             
         }
+
+        var cvous = new google.maps.Marker({
+            icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+            position: {lat: latitude_user, lng: longitude_user},
+            title: "C'est vous.",
+            animation: google.maps.Animation.DROP,
+        });
+        cvous.addListener('click', toggleBounce);
+        cvous.setMap(map);
 
 
         function toggleBounce() {
