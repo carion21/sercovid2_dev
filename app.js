@@ -59,7 +59,7 @@ var devurlApi = 'http://localhost:4545/scrapper'
 var produrlApi = 'https://heroku-sercovid2.herokuapp.com/scrapper'
 
 var devInterval = 10000
-var prodInterval = 5000
+var prodInterval = 14400000
 
 if (apienv == "dev") {
     urlApi = devurlApi
