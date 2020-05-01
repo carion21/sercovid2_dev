@@ -18,7 +18,7 @@ const prod = {
     'port': 3306
 }
 
-const env = prod
+const env = dev
 
 const HOST = env.host
 const USER = env.user
