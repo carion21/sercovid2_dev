@@ -7,7 +7,7 @@ router.get('/', (req, res, next) => {
 
 /* GET home page. */
 router.get('/fichierapk', function (req, res, next) {
-    var nomfichier = 'a.txt'
+    var nomfichier = 'SerCovid19.apk'
     res.render('telechar/fichierapk', {
         nomfichier: nomfichier,
         lienfichier: '/file/'+nomfichier
